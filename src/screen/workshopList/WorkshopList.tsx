@@ -28,13 +28,17 @@ export default function WorkshopList() {
             if (res?.ListaOficinas) {
                 setWorkshopList(res.ListaOficinas);
             } else {
-                Alert.showAlert('Erro', res?.RetornoErro.message || 'Não foi possível buscar as oficinas.\n Tente novamente mais tarde.')
+                requestError(res?.RetornoErro?.message)
             }
         }).catch((error) => {
-            Alert.showAlert('Erro', error.message || 'Não foi possível buscar as oficinas.\n Tente novamente mais tarde.')
+            requestError(error.message)
         }).finally(() => {
             setLoading(false);
         });
+    }
+
+    function requestError(errorMessage?: string) {
+        Alert.showAlert('Erro', errorMessage || 'Não foi possível buscar as oficinas.\nTente novamente mais tarde.')
     }
 
     function onPressItem(item: WorkshopModel) {
@@ -63,8 +67,8 @@ export default function WorkshopList() {
     }
 
     return (
-        <SafeAreaView style={[Style.container]}>
-            <Header hideBackButton headerText={"Lista de oficinas"}/>
+        <SafeAreaView style={[Style.containerStyle]}>
+            <Header hideBackButton headerText={"Oficinas"}/>
 
             {loading ?
                 <Loading size={60} />

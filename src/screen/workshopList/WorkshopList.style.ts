@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
+import { colors, dimensions } from "../../style/Style";
 
 export default StyleSheet.create({
-    container: {
+    containerStyle: {
         flex: 1,
-        backgroundColor: 'white'
+        backgroundColor: colors.tertiary
     },
     listStyle: {
-        paddingHorizontal: 16,
-        marginTop: 16
+        paddingHorizontal: dimensions.lg,
     },
     emptyListContainer: {
         flex: 1,

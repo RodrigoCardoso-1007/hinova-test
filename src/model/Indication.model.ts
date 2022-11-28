@@ -1,13 +1,13 @@
-export interface IndicacaoModel {
+export interface IndicationModel {
     CodigoAssociacao: number,
     DataCriacao?: Date,
     CpfAssociado: string,
     EmailAssociado: string,
     NomeAssociado: string,
-    TelefoneAssociado: string,
+    TelefoneAssociado?: string,
     PlacaVeiculoAssociado: string,
     NomeAmigo: string,
-    TelefoneAmigo: string,
+    TelefoneAmigo?: string,
     EmailAmigo: string,
     Observacao: string,
 }

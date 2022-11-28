@@ -1,7 +1,7 @@
-import { IndicacaoModel } from "../../../../model";
+import { IndicationModel } from "../../../../model";
 
 export interface IIndicationInput {
-    Indicacao: IndicacaoModel,
+    Indicacao: IndicationModel,
     Remetente: string,
-    Copias: string[]
+    Copias?: string[]
 }

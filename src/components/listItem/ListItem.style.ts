@@ -1,39 +1,45 @@
 import { StyleSheet } from "react-native";
-import { colors } from "./../../style/Style";
+import { colors, dimensions, fontSize, fonts } from "./../../style/Style";
 
 export default StyleSheet.create({
-    container: {
-        backgroundColor: 'white',
-        paddingVertical: 16,
+    containerStyle: {
+        marginTop: dimensions.sm,
         flexDirection: 'row',
-        borderBottomWidth: 0.5,
-        alignItems: 'center',
+        borderRadius: dimensions.lg,
+        paddingHorizontal: dimensions.md,
+        paddingVertical: dimensions.lg,
+        backgroundColor: colors.tertiary,
+        borderWidth: 1,
+        borderColor: colors.primary,
     },
     imageStyle: {
         width: 60,
         height: 60,
-        borderRadius: 30,
         borderWidth: 1,
-        borderColor: 'blue',
+        borderRadius: dimensions.md,
+        borderColor: colors.primary,
     },
-    textContainer: {
+    textContainerStyle: {
         flex: 1,
-        marginLeft: 16,
+        marginLeft: dimensions.lg,
     },
     titleStyle: {
-        color: colors.textColor.primary,
-        fontSize: 16,
-        fontWeight: 'bold',
+        color: colors.primary,
+        fontSize: fontSize.sm,
+        fontFamily: fonts.medium
     },
     textStyle: {
-        color: colors.textColor.secondary,
+        marginTop: dimensions.sm,
+        lineHeight: dimensions.lg,
+        color: colors.secondary,
         opacity: 0.8,
-        fontSize: 12,
-        marginTop: 4
+        fontSize: fontSize.xs,
+        fontFamily: fonts.semiBold,
     },
     iconStyle: {
         fontSize: 30,
-        color: colors.textColor.primary,
+        color: colors.primary,
+        alignSelf: 'center'
     }
 
 })

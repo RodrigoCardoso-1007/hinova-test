@@ -10,7 +10,7 @@ export default function ListItem(props: IListItemProps) {
 
     const {
         title, description,
-        image, styleProps,
+        image, style,
         numberOfLinesTitle,
         numberOfLinesDescription,
         hideIcon, customIcon,
@@ -25,26 +25,26 @@ export default function ListItem(props: IListItemProps) {
 
     return (
         <TouchableOpacity
-            style={[Style.container, styleProps?.container]}
+            style={[Style.containerStyle, style?.containerStyle]}
             onPress={onPress}
         >
             {image &&
                 <Image
-                    style={[Style.imageStyle, styleProps?.imageStyle]}
+                    style={[Style.imageStyle, style?.imageStyle]}
                     source={{ uri: Mask.formatBase64(image) }}
                 />
             }
 
-            <View style={[Style.textContainer, styleProps?.textContainer]}>
-                <Text style={[Style.titleStyle, styleProps?.titleStyle]} numberOfLines={numberOfLinesTitle}>{title}</Text>
+            <View style={[Style.textContainerStyle, style?.textContainerStyle]}>
+                <Text style={[Style.titleStyle, style?.titleStyle]} numberOfLines={numberOfLinesTitle}>{title}</Text>
 
                 {description &&
-                    <Text style={[Style.textStyle, styleProps?.textStyle]} numberOfLines={numberOfLinesDescription}>{description}</Text>
+                    <Text style={[Style.textStyle, style?.textStyle]} numberOfLines={numberOfLinesDescription}>{description}</Text>
                 }
             </View>
 
             {!hideIcon &&
-                <MaterialIcons style={[Style.iconStyle, styleProps?.iconStyle]} name={customIcon || "chevron-right"} />
+                <MaterialIcons style={[Style.iconStyle, style?.iconStyle]} name={customIcon || "chevron-right"} />
             }
         </TouchableOpacity>
     );

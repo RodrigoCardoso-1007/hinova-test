@@ -3,24 +3,18 @@ import { colors, dimensions, fonts, fontSize } from "./../../style/Style";
 
 export default StyleSheet.create({
     containerStyle: {
-        height: 70,
-        backgroundColor: colors.tertiary,
+        flex: 1,
         alignItems: 'center',
-        paddingHorizontal: dimensions.lg,
-        flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderBottomColor:  colors.primary
+        justifyContent: 'center',
+        backgroundColor: colors.primary,
+        borderRadius: dimensions.md
     },
     textStyle: {
         textAlign: 'center',
-        color: colors.primary,
+        color: 'white',
         fontSize: fontSize.lg,
-        flex: 1,
         textTransform: "uppercase",
         fontFamily: fonts.bold,
-        marginRight: dimensions.lg
-    },
-    iconStyle: {
-        alignItems: 'flex-start'
+        letterSpacing: 1.3,
     }
 })

@@ -1,11 +1,15 @@
 export default class RestAPI {
 
-    public static URL = `http://app.hinovamobile.com.br/ProvaConhecimentoWebApi/api`;
+    public static URL = `http://app.hinovamobile.com.br/ProvaConhecimentoWebApi/Api`;
 
     public static async httpMethod(method: string, url: string, body?: any) {
         return fetch(url, {
             method: method,
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
         });
     }
 
